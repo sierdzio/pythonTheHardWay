@@ -1,5 +1,5 @@
 cars = 100
-spaceInACar = 40
+spaceInACar = 4.0
 drivers = 30
 passengers = 90
 carsNotDriven = cars - drivers
