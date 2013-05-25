@@ -1,0 +1,4 @@
+# git ignore for my learning of LearnPythonTheHardWay.org
+*~
+*.kate-swp
+*.autosave
