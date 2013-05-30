@@ -1,0 +1,3 @@
+This is some stuff in a text file.
+And another line.
+Yet another line, 'm afraid.
