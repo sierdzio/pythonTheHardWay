@@ -15,7 +15,7 @@ def printOne(arg1):
     print "arg1: %s" % arg1
 
 # No args
-def printOne():
+def printNone():
     print "I got nothin'."
 
 printTwo("Tom", "Bob")
