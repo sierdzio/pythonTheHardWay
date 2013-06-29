@@ -3,4 +3,5 @@
 *.kate-swp
 *.autosave
 *.user
+*.user.*
 *.pyc
