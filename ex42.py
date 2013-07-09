@@ -3,7 +3,8 @@
 
 # Animal is-a object, that is a class named "object"... just to confuse matters ;)
 class Animal(object):
-    pass
+    def pet(self):
+        print "Insert default petting message here"
 
 # Dog is an Animal
 class Dog(Animal):
@@ -11,11 +12,17 @@ class Dog(Animal):
         # Dog has a name
         self.name = name
 
+    def pet(self):
+        print "The dog is happy but smells awfully"
+
 # Cat is an animal
 class Cat(Animal):
     def __init__(self, name):
         # Cat has a name
         self.name = name
+
+    def pet(self):
+        print "The cat is purrning and then bites you"
 
 # Person is an object
 class Person(object):
@@ -23,7 +30,7 @@ class Person(object):
         # Person has a name
         self.name = name
 
-        ## Person has a pet of some kind
+        # Person has a pet of some kind
         self.pet = None
 
 # Employee is a Person
@@ -72,3 +79,10 @@ crouse = Salmon()
 
 # harry is a Halibut
 harry = Halibut()
+
+# petting mary's pet:
+mary.pet.pet()
+
+# petting frank's pet:
+print "Attempting to pet the pet of", frank.name
+frank.pet.pet()
