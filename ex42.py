@@ -5,70 +5,70 @@
 class Animal(object):
     pass
 
-# ??
+# Dog is an Animal
 class Dog(Animal):
     def __init__(self, name):
-        # ??
+        # Dog has a name
         self.name = name
 
-# ??
+# Cat is an animal
 class Cat(Animal):
     def __init__(self, name):
-        # ??
+        # Cat has a name
         self.name = name
 
-# ??
+# Person is an object
 class Person(object):
     def __init__(self, name):
-        # ??
+        # Person has a name
         self.name = name
 
-        ## Person has-a pet of some kind
+        ## Person has a pet of some kind
         self.pet = None
 
-# ??
+# Employee is a Person
 class Employee(Person):
     def __init__(self, name, salary):
-        # ?? Magic!
+        # Employee assigns it's name through superclass constructor | Magic!
         super(Employee, self).__init__(name)
-        # ??
+        # Employee has a salary. Not surprisingly, really
         self.salary = salary
 
-# ??
+# Fish is an object and has no members.
 class Fish(object):
     pass
 
-# ??
+# Salmon is a Fish
 class Salmon(Fish):
     pass
 
-# ??
+# Halibut is a Fish, too.
 class Halibut(Fish):
     pass
 
-# rova is-a Dog
+# rover is-a Dog
 rover = Dog("Rover")
 
-# ??
+# bill is a Cat
 bill = Cat("Bill")
 
-# ??
-mary = Person("Mary)
+# mary is a Person
+mary = Person("Mary")
 
-# ??
+# Mary has a pet - bill
 mary.pet = bill
 
-# ??
+# frank is an Employee with a good salary
 frank = Employee("Frank", 120000)
 
-# ??
+# frank has a pet - rover
 frank.pet = rover
 
-# ??
+# flipper is a Fish
 flipper = Fish()
 
-# ??
+# crouse is a Salmon
 crouse = Salmon()
 
-# ??
+# harry is a Halibut
 harry = Halibut()
