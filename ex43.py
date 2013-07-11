@@ -4,23 +4,48 @@
 # Gothons from Percal 25 :-)
 
 class Engine (object):
-    def __init__(self, scene_map):
-        pass
+    def __init__(self, sceneMap):
+        self.map = sceneMap
 
     def play(self):
-        pass
+        currentScene = self.map.begin()
+
+        while (self.map.hasFinished == False):
+            currentScene = self.map.nextScene(currentScene)
+            currentScene.enter()
 
 class Map(object):
-    def __init__(self, startScene):
-        pass
+    def __init__(self, startSceneName):
+        self.startScene = startSceneName
+        self.hasFinished = False
+
+        death = Death()
+        centralCorridor = CentralCorridor()
+        laserWeaponArmory = LaserWeaponArmory()
+        theBridge = TheBridge()
+        escapePod = EscapePod()
+        self.scenes = {death.name() : death,
+                       centralCorridor.name() : centralCorridor,
+                       laserWeaponArmory.name() : laserWeaponArmory,
+                       theBridge.name() : theBridge,
+                       escapePod.name() : escapePod}
 
     def nextScene(self, sceneName):
-        pass
+        outcome = self.scenes[sceneName].enter()
+        if (outcome == -1 or outcome == None):
+            self.hasFinished = True
+        return outcome
 
-    def openingScene(self):
-        pass
+    def begin(self):
+        return self.nextScene(self.startScene)
+
+    def hasFinished(self):
+        return self.hasFinished
 
 class Scene(object):
+    def name(self):
+        return self.__class__.__name__
+
     def enter(self):
         pass
 
@@ -45,6 +70,6 @@ class EscapePod(Scene):
         pass
 
 # Test area:
-map = Map('centralCorridor')
+map = Map('CentralCorridor')
 game = Engine(map)
 game.play()
